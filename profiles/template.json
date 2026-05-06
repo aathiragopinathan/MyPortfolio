@@ -1,0 +1,113 @@
+{
+  "profile": {
+    "name": "Your Name",
+    "role": "Your Role",
+    "location": "City, Country",
+    "status": "Current title or degree",
+    "intro": "Short intro about your background.",
+    "summary": "Short second line about your focus and interests.",
+    "hero_highlights": [
+      "Highlight one",
+      "Highlight two",
+      "Highlight three",
+      "Highlight four"
+    ]
+  },
+  "contact": {
+    "note": "Use this section for a short invitation to connect, plus your email, GitHub, LinkedIn, or personal site.",
+    "links": [
+      {
+        "label": "Email",
+        "url": "mailto:you@example.com"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/yourusername"
+      }
+    ]
+  },
+  "skill_groups": [
+    {
+      "title": "Digital Skills",
+      "items": [
+        "Skill one",
+        "Skill two"
+      ]
+    },
+    {
+      "title": "Soft Skills",
+      "items": [
+        "Skill one",
+        "Skill two"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "name": "English",
+      "level": "C1",
+      "details": "Describe your level."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Project Name",
+      "overview": "**Overview:** One-line project description.",
+      "highlights": [
+        "**Highlight one:** What you built or improved.",
+        "**Highlight two:** Another result or contribution."
+      ],
+      "stack": [
+        "Tool one",
+        "Tool two"
+      ],
+      "github_url": "",
+      "demo_url": ""
+    }
+  ],
+  "experience": [
+    {
+      "role": "Job Title",
+      "company": "Company Name",
+      "period": "Jan 2024 - Present",
+      "location": "City, Country",
+      "client": "",
+      "overview": "**Overview:** One-line role summary.",
+      "highlights": [
+        "**Highlight one:** Main contribution.",
+        "**Highlight two:** Another contribution."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Degree Name",
+      "institution": "Institution Name",
+      "period": "2020 - 2024",
+      "location": "City, Country",
+      "details": [
+        "**Focus:** Main academic focus."
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Certification Name",
+      "issuer": "Issuer",
+      "period": "2024",
+      "details": [
+        "**Recognition:** One line about it."
+      ]
+    }
+  ],
+  "volunteering": [
+    {
+      "role": "Role",
+      "organization": "Organization",
+      "period": "2023 - 2024",
+      "details": [
+        "**Contribution:** One line here."
+      ]
+    }
+  ]
+}

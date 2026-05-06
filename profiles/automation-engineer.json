@@ -1,0 +1,207 @@
+{
+  "profile": {
+    "name": "Aathira Gopinathan",
+    "role": "Systems & Automation Engineer",
+    "location": "Dortmund, Germany",
+    "status": "MSc Automation & Robotics, TU Dortmund",
+    "intro": "Results-driven engineer with expertise in automotive diagnostics, industrial IoT, real-time data acquisition, embedded systems, and system development.",
+    "summary": "Passionate about intelligent robotic systems, machine learning, and automation technologies that support next-generation industrial advancement.",
+    "hero_highlights": [
+      "ECU Diagnostics: CAN, UDS, ISO 14229",
+      "Industrial IoT: Modbus, MQTT",
+      "Real-Time Data Acquisition",
+      "Embedded Systems and Problem Solving"
+    ]
+  },
+  "contact": {
+    "note": "Open to conversations around diagnostics, industrial automation, embedded systems, and robotics-focused product work.",
+    "links": []
+  },
+  "skill_groups": [
+    {
+      "title": "Digital Skills",
+      "items": [
+        "Python",
+        "MATLAB",
+        "C++",
+        "Arduino",
+        "Machine Learning",
+        "Computer Vision",
+        "Industrial Communication Protocols",
+        "IoT and IIoT",
+        "Raspberry Pi",
+        "ESP32"
+      ]
+    },
+    {
+      "title": "Soft Skills",
+      "items": [
+        "Analytical Problem Solving",
+        "Goal Oriented",
+        "Adaptable",
+        "Self-Motivated",
+        "Team Worker"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "name": "English",
+      "level": "C1",
+      "details": "Listening, reading, writing, and spoken interaction at C1 level."
+    },
+    {
+      "name": "German",
+      "level": "A1",
+      "details": "Listening, reading, writing, and spoken interaction at A1 level."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Krishak Robot",
+      "overview": "**Overview:** Autonomous agricultural rover with a 6-DOF robotic arm built for precision field operations.",
+      "highlights": [
+        "**Robotic arm platform:** Built a 6-DOF robotic arm on a 6-wheeled rover chassis, improving task precision by 30% and reducing labor costs by 20%.",
+        "**Task automation:** Implemented a finite state machine for automated scheduling, increasing efficiency by 40%.",
+        "**Autonomous weed detection:** Integrated computer vision and AI with 95% accuracy, reducing herbicide usage by 25%."
+      ],
+      "stack": [
+        "Robotics",
+        "Computer Vision",
+        "AI",
+        "FSM",
+        "Embedded Systems"
+      ],
+      "github_url": "",
+      "demo_url": ""
+    },
+    {
+      "title": "Personality Prediction of Candidates",
+      "overview": "**Overview:** Machine learning project for personality prediction based on behavioural and skill analysis.",
+      "highlights": [
+        "**Prediction model:** Built a machine learning model for personality prediction, improving hiring accuracy by 25%.",
+        "**Model optimization:** Improved performance with Python, data preprocessing, and feature engineering.",
+        "**Evaluation:** Achieved 92% accuracy on test datasets."
+      ],
+      "stack": [
+        "Python",
+        "Machine Learning",
+        "Feature Engineering",
+        "Data Preprocessing"
+      ],
+      "github_url": "",
+      "demo_url": ""
+    },
+    {
+      "title": "Sustainable Smart Lighting",
+      "overview": "**Overview:** Adaptive highway lighting concept designed around energy harvesting and smarter power usage.",
+      "highlights": [
+        "**Energy harvesting:** Designed a highway lighting system using piezoelectric transducers to reduce infrastructure energy costs.",
+        "**Power management:** Improved energy storage efficiency by 30% through a dedicated management system.",
+        "**Adaptive control:** Integrated motion sensors and microcontrollers to reduce energy waste by 40%."
+      ],
+      "stack": [
+        "Embedded Systems",
+        "Sensors",
+        "Microcontrollers",
+        "Power Management"
+      ],
+      "github_url": "",
+      "demo_url": ""
+    }
+  ],
+  "experience": [
+    {
+      "role": "Assistant System Engineer",
+      "company": "Tata Consultancy Services",
+      "period": "Jan 2024 - Sep 2024",
+      "location": "Pune, India",
+      "client": "Nissan Motor Corporation, Marelli",
+      "overview": "**Overview:** Worked on ECU diagnostics and automotive validation projects for Nissan Motor Corporation and Marelli.",
+      "highlights": [
+        "**CAN and UDS diagnostics:** Developed and implemented Controller Area Network (CAN) and Unified Diagnostic Services (UDS, ISO 14229) with ISO 15765 compliance.",
+        "**ODX and PDX integration:** Managed diagnostic data exchange formats and reduced processing time by 30%.",
+        "**OTX automation:** Automated ECU diagnostic workflows with OTX scripting, improving test efficiency by 40% and reducing manual intervention.",
+        "**Root cause analysis:** Resolved critical ECU software issues and supported faster software deployments.",
+        "**Technical documentation:** Authored documentation for Marelli's fan temperature control system, improving troubleshooting efficiency by 30%."
+      ]
+    },
+    {
+      "role": "IoT Engineer Intern",
+      "company": "Faclon Lab",
+      "period": "Oct 2023 - Jan 2024",
+      "location": "Mumbai, India",
+      "client": "",
+      "overview": "**Overview:** Worked on industrial IoT gateways, PLC integration, and real-time machine data acquisition.",
+      "highlights": [
+        "**Industrial protocols:** Configured Profinet, Modbus TCP, RS485, and MQTT for IIoT gateways to improve machine-to-machine communication.",
+        "**Real-time integration:** Connected PLCs, energy meters, and industrial sensors, reducing system downtime by 20%.",
+        "**PLC automation:** Developed ladder logic solutions that increased system reliability by 30%.",
+        "**Signal conditioning:** Implemented 4-20mA sensor interfacing to improve data accuracy, noise immunity, and signal integrity."
+      ]
+    },
+    {
+      "role": "Embedded Software Engineer Intern",
+      "company": "New Leap Initiative",
+      "period": "Jul 2022 - Jan 2023",
+      "location": "Mumbai, India",
+      "client": "",
+      "overview": "**Overview:** Contributed to embedded firmware and satellite health monitoring systems.",
+      "highlights": [
+        "**Health monitoring system:** Developed a satellite health monitoring system using COTS sensors and Embedded C, improving data accuracy by 35%.",
+        "**Flight firmware:** Designed firmware for BeliefSat-1 to support real-time image capture and wireless transmission via Arducam.",
+        "**Protocol debugging:** Implemented and debugged SPI, UART, and I2C communication for reliable sensor data acquisition."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "MSc Automation and Robotics",
+      "institution": "Technical University Dortmund",
+      "period": "Oct 2024 - Present",
+      "location": "Dortmund, Germany",
+      "details": [
+        "**Focus:** Automation, robotics, and intelligent systems."
+      ]
+    },
+    {
+      "degree": "BTech Electronics and Telecommunications",
+      "institution": "K.J. Somaiya Institute of Technology",
+      "period": "Aug 2019 - May 2023",
+      "location": "Mumbai, India",
+      "details": [
+        "**Final grade:** 9.37",
+        "**Coursework:** Embedded Systems, Robotics, Autonomous Vehicle, IoT, Image Processing and Machine Vision, Machine Learning."
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "title": "TCS Learning Achievement Award",
+      "issuer": "Tata Consultancy Services",
+      "period": "2024",
+      "details": [
+        "**Recognition:** Awarded for outstanding performance and technical contributions."
+      ]
+    },
+    {
+      "title": "FICCI-SIEMENS Safety Certifications",
+      "issuer": "FICCI-SIEMENS",
+      "period": "2023",
+      "details": [
+        "**Completed training in:** Industrial Electrical Safety, Machine Safety, Construction Safety, Hazard Identification, Risk Assessment, and Safe Work Method Statement preparation."
+      ]
+    }
+  ],
+  "volunteering": [
+    {
+      "role": "Joint Secretary",
+      "organization": "ISTE",
+      "period": "Jan 2021 - Feb 2022",
+      "details": [
+        "**Event leadership:** Led the planning and coordination of technical and non-technical events.",
+        "**Community support:** Assisted with event promotion, workshop facilitation, and session organization."
+      ]
+    }
+  ]
+}
