@@ -674,6 +674,18 @@ footer p {
     overflow: hidden;
 }
 
+.company-logo-link {
+    display: block;
+    border-radius: 20px;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.company-logo-link:hover,
+.company-logo-link:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.08);
+}
+
 :root[data-theme="dark"] .company-logo-wrap {
     background: rgba(255, 255, 255, 0.04);
 }
@@ -684,6 +696,24 @@ footer p {
     height: auto;
     max-height: 40px;
     object-fit: contain;
+}
+
+.eyebrow-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent);
+}
+
+.eyebrow-link::after {
+    content: "↗";
+    font-size: 0.88em;
+    line-height: 1;
+}
+
+.eyebrow-link:hover,
+.eyebrow-link:focus-visible {
+    color: var(--accent-strong);
 }
 
 .meta-row {

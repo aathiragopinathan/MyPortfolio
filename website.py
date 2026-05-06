@@ -696,6 +696,18 @@ STYLES = dedent(
         overflow: hidden;
     }
 
+    .company-logo-link {
+        display: block;
+        border-radius: 20px;
+        transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .company-logo-link:hover,
+    .company-logo-link:focus-visible {
+        transform: translateY(-1px);
+        box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.08);
+    }
+
     :root[data-theme="dark"] .company-logo-wrap {
         background: rgba(255, 255, 255, 0.04);
     }
@@ -706,6 +718,24 @@ STYLES = dedent(
         height: auto;
         max-height: 40px;
         object-fit: contain;
+    }
+
+    .eyebrow-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--accent);
+    }
+
+    .eyebrow-link::after {
+        content: "↗";
+        font-size: 0.88em;
+        line-height: 1;
+    }
+
+    .eyebrow-link:hover,
+    .eyebrow-link:focus-visible {
+        color: var(--accent-strong);
     }
 
     .meta-row {
@@ -1214,13 +1244,15 @@ def validate_content(content: object) -> dict[str, object]:
     for index, item in enumerate(validate_object_list(data.get("experience"), "experience")):
         for field in ("role", "company", "period", "location", "client", "overview"):
             expect_string(item.get(field, ""), f"experience[{index}].{field}")
-        for field in ("logo_path", "logo_alt"):
+        for field in ("logo_path", "logo_alt", "organization_url"):
             expect_string(item.get(field, ""), f"experience[{index}].{field}")
         validate_string_list(item.get("highlights"), f"experience[{index}].highlights")
 
     for index, item in enumerate(validate_object_list(data.get("education"), "education")):
         for field in ("degree", "institution", "period", "location"):
             expect_string(item.get(field), f"education[{index}].{field}")
+        for field in ("logo_path", "logo_alt", "organization_url"):
+            expect_string(item.get(field, ""), f"education[{index}].{field}")
         validate_string_list(item.get("details"), f"education[{index}].details")
 
     for index, item in enumerate(validate_object_list(data.get("certifications"), "certifications")):
@@ -1308,6 +1340,15 @@ def render_tag_row(items: list[str]) -> str:
     return f'<ul class="tag-row">{rendered}</ul>'
 
 
+def render_eyebrow(value: str, link_url: str = "") -> str:
+    if link_url:
+        return (
+            f'<a class="eyebrow eyebrow-link" href="{escape(link_url)}" '
+            f'target="_blank" rel="noreferrer">{escape(value)}</a>'
+        )
+    return f'<p class="eyebrow">{escape(value)}</p>'
+
+
 def render_meta_row(parts: list[str]) -> str:
     filtered = [escape(part) for part in parts if part]
     if not filtered:
@@ -1368,16 +1409,26 @@ def render_experience(items: list[dict[str, object]]) -> str:
     for index, item in enumerate(items):
         client = item.get("client", "")
         client_part = f"Client: {client}" if client else ""
+        organization_url = item.get("organization_url", "")
         logo_block = ""
         logo_path = item.get("logo_path", "")
         if logo_path:
             logo_alt = item.get("logo_alt") or f'{item["company"]} logo'
-            logo_block = (
+            logo_image = (
                 f'<div class="company-logo-wrap">'
                 f'<img class="company-logo" src="{escape(logo_path)}" '
                 f'alt="{escape(logo_alt)}" loading="lazy" />'
                 f"</div>"
             )
+            if organization_url:
+                logo_block = (
+                    f'<a class="company-logo-link" href="{escape(organization_url)}" '
+                    f'target="_blank" rel="noreferrer" '
+                    f'aria-label="Open {escape(item["company"])} website">'
+                    f"{logo_image}</a>"
+                )
+            else:
+                logo_block = logo_image
         cards.append(
             f"""
             <article class="card reveal" data-tone="{tones[index % len(tones)]}">
@@ -1385,7 +1436,7 @@ def render_experience(items: list[dict[str, object]]) -> str:
                     <div class="card-header company-head">
                         {logo_block}
                         <div class="company-copy">
-                            <p class="eyebrow">{escape(item["company"])}</p>
+                            {render_eyebrow(item["company"], organization_url)}
                             <h3>{escape(item["role"])}</h3>
                             {render_meta_row([item["period"], item["location"], client_part])}
                         </div>
@@ -1404,15 +1455,38 @@ def render_education(items: list[dict[str, object]]) -> str:
     tones = ("accent", "neutral")
 
     for index, item in enumerate(items):
+        organization_url = item.get("organization_url", "")
+        logo_block = ""
+        logo_path = item.get("logo_path", "")
+        if logo_path:
+            logo_alt = item.get("logo_alt") or f'{item["institution"]} logo'
+            logo_image = (
+                f'<div class="company-logo-wrap">'
+                f'<img class="company-logo" src="{escape(logo_path)}" '
+                f'alt="{escape(logo_alt)}" loading="lazy" />'
+                f"</div>"
+            )
+            if organization_url:
+                logo_block = (
+                    f'<a class="company-logo-link" href="{escape(organization_url)}" '
+                    f'target="_blank" rel="noreferrer" '
+                    f'aria-label="Open {escape(item["institution"])} website">'
+                    f"{logo_image}</a>"
+                )
+            else:
+                logo_block = logo_image
         details = "".join(f"<p>{format_text(detail)}</p>" for detail in item["details"])
         cards.append(
             f"""
             <article class="card reveal" data-tone="{tones[index % len(tones)]}">
                 <div class="card-body compact">
-                    <div class="card-header">
-                        <p class="eyebrow">{escape(item["institution"])}</p>
-                        <h3>{escape(item["degree"])}</h3>
-                        {render_meta_row([item["period"], item["location"]])}
+                    <div class="card-header company-head">
+                        {logo_block}
+                        <div class="company-copy">
+                            {render_eyebrow(item["institution"], organization_url)}
+                            <h3>{escape(item["degree"])}</h3>
+                            {render_meta_row([item["period"], item["location"]])}
+                        </div>
                     </div>
                     <div class="detail-list">{details}</div>
                 </div>

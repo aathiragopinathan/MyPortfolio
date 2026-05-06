@@ -117,6 +117,7 @@
       "period": "Jan 2024 - Sep 2024",
       "location": "Pune, India",
       "client": "Nissan Motor Corporation, Marelli",
+      "organization_url": "https://www.tcs.com",
       "logo_path": "assets/logos/tcs.svg",
       "logo_alt": "Tata Consultancy Services logo",
       "overview": "**Overview:** Worked on ECU diagnostics and automotive validation projects for Nissan Motor Corporation and Marelli.",
@@ -134,6 +135,7 @@
       "period": "Oct 2023 - Jan 2024",
       "location": "Mumbai, India",
       "client": "",
+      "organization_url": "https://www.faclon.com",
       "logo_path": "assets/logos/faclon-labs.svg",
       "logo_alt": "Faclon Labs logo",
       "overview": "**Overview:** Worked on industrial IoT gateways, PLC integration, and real-time machine data acquisition.",
@@ -150,6 +152,7 @@
       "period": "Jul 2022 - Jan 2023",
       "location": "Mumbai, India",
       "client": "",
+      "organization_url": "https://kjsieit.in/NLL/",
       "logo_path": "assets/logos/new-leap-initiative.svg",
       "logo_alt": "New Leap Initiative logo",
       "overview": "**Overview:** Contributed to embedded firmware and satellite health monitoring systems.",
@@ -175,6 +178,7 @@
       "institution": "K.J. Somaiya Institute of Technology",
       "period": "Aug 2019 - May 2023",
       "location": "Mumbai, India",
+      "organization_url": "https://kjsit.somaiya.edu.in/en",
       "details": [
         "**Final grade:** 9.37",
         "**Coursework:** Embedded Systems, Robotics, Autonomous Vehicle, IoT, Image Processing and Machine Vision, Machine Learning."
