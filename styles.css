@@ -661,22 +661,23 @@ footer p {
 }
 
 .company-logo-wrap {
-    width: 72px;
+    width: 168px;
     height: 72px;
-    flex: 0 0 72px;
+    flex: 0 0 168px;
     display: grid;
     place-items: center;
-    padding: 12px;
-    border-radius: 20px;
+    padding: 8px 10px;
+    border-radius: 18px;
     border: 1px solid var(--border);
-    background: rgba(255, 255, 255, 0.32);
+    background: #ffffff;
     box-shadow: var(--shadow-card);
     overflow: hidden;
 }
 
 .company-logo-link {
     display: block;
-    border-radius: 20px;
+    flex: 0 0 auto;
+    border-radius: 18px;
     transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
@@ -686,16 +687,12 @@ footer p {
     box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.08);
 }
 
-:root[data-theme="dark"] .company-logo-wrap {
-    background: rgba(255, 255, 255, 0.04);
-}
-
 .company-logo {
     display: block;
     width: 100%;
-    height: auto;
-    max-height: 40px;
+    height: 100%;
     object-fit: contain;
+    object-position: center;
 }
 
 .eyebrow-link {
@@ -997,8 +994,9 @@ footer p {
     }
 
     .company-logo-wrap {
-        width: 64px;
-        height: 64px;
-        flex-basis: 64px;
+        width: 144px;
+        height: 60px;
+        flex-basis: 144px;
+        padding: 6px 8px;
     }
 }

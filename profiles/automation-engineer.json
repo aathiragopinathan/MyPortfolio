@@ -153,8 +153,8 @@
       "location": "Mumbai, India",
       "client": "",
       "organization_url": "https://kjsieit.in/NLL/",
-      "logo_path": "assets/logos/new-leap-initiative.svg",
-      "logo_alt": "New Leap Initiative logo",
+      "logo_path": "assets/logos/new-leap-labs.png",
+      "logo_alt": "New Leap Labs logo",
       "overview": "**Overview:** Contributed to embedded firmware and satellite health monitoring systems.",
       "highlights": [
         "**Health monitoring system:** Developed a satellite health monitoring system using COTS sensors and Embedded C, improving data accuracy by 35%.",
@@ -179,6 +179,8 @@
       "period": "Aug 2019 - May 2023",
       "location": "Mumbai, India",
       "organization_url": "https://kjsit.somaiya.edu.in/en",
+      "logo_path": "assets/logos/kjsit.svg",
+      "logo_alt": "K.J. Somaiya Institute of Technology logo",
       "details": [
         "**Final grade:** 9.37",
         "**Coursework:** Embedded Systems, Robotics, Autonomous Vehicle, IoT, Image Processing and Machine Vision, Machine Learning."
