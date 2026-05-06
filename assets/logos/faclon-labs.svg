@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 64" role="img" aria-labelledby="title">
+  <title>Faclon Labs</title>
+  <rect width="180" height="64" rx="16" fill="#ffffff" />
+  <circle cx="30" cy="32" r="15" fill="#2563eb" />
+  <path d="M30 18a14 14 0 0 1 12 7h-9v14h-6V18h3z" fill="#dbeafe" />
+  <text
+    x="60"
+    y="31"
+    fill="#1e3a8a"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="21"
+    font-weight="700"
+  >
+    faclon
+  </text>
+  <text
+    x="61"
+    y="47"
+    fill="#64748b"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="10"
+    font-weight="700"
+    letter-spacing="3"
+  >
+    LABS
+  </text>
+</svg>

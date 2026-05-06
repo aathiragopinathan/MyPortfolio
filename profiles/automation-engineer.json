@@ -117,6 +117,8 @@
       "period": "Jan 2024 - Sep 2024",
       "location": "Pune, India",
       "client": "Nissan Motor Corporation, Marelli",
+      "logo_path": "assets/logos/tcs.svg",
+      "logo_alt": "Tata Consultancy Services logo",
       "overview": "**Overview:** Worked on ECU diagnostics and automotive validation projects for Nissan Motor Corporation and Marelli.",
       "highlights": [
         "**CAN and UDS diagnostics:** Developed and implemented Controller Area Network (CAN) and Unified Diagnostic Services (UDS, ISO 14229) with ISO 15765 compliance.",
@@ -132,6 +134,8 @@
       "period": "Oct 2023 - Jan 2024",
       "location": "Mumbai, India",
       "client": "",
+      "logo_path": "assets/logos/faclon-labs.svg",
+      "logo_alt": "Faclon Labs logo",
       "overview": "**Overview:** Worked on industrial IoT gateways, PLC integration, and real-time machine data acquisition.",
       "highlights": [
         "**Industrial protocols:** Configured Profinet, Modbus TCP, RS485, and MQTT for IIoT gateways to improve machine-to-machine communication.",
@@ -146,6 +150,8 @@
       "period": "Jul 2022 - Jan 2023",
       "location": "Mumbai, India",
       "client": "",
+      "logo_path": "assets/logos/new-leap-initiative.svg",
+      "logo_alt": "New Leap Initiative logo",
       "overview": "**Overview:** Contributed to embedded firmware and satellite health monitoring systems.",
       "highlights": [
         "**Health monitoring system:** Developed a satellite health monitoring system using COTS sensors and Embedded C, improving data accuracy by 35%.",

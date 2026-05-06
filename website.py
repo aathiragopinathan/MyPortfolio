@@ -3,7 +3,9 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import mimetypes
 import re
+import shutil
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from textwrap import dedent
@@ -667,6 +669,45 @@ STYLES = dedent(
         gap: 16px;
     }
 
+    .card-header.company-head {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .company-copy {
+        display: grid;
+        gap: 10px;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .company-logo-wrap {
+        width: 72px;
+        height: 72px;
+        flex: 0 0 72px;
+        display: grid;
+        place-items: center;
+        padding: 12px;
+        border-radius: 20px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.32);
+        box-shadow: var(--shadow-card);
+        overflow: hidden;
+    }
+
+    :root[data-theme="dark"] .company-logo-wrap {
+        background: rgba(255, 255, 255, 0.04);
+    }
+
+    .company-logo {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 40px;
+        object-fit: contain;
+    }
+
     .meta-row {
         display: flex;
         flex-wrap: wrap;
@@ -935,12 +976,22 @@ STYLES = dedent(
             flex-direction: column;
         }
 
+        .card-header.company-head {
+            align-items: center;
+        }
+
         .project-links {
             justify-content: flex-start;
         }
 
         .card-grid.three {
             grid-template-columns: 1fr;
+        }
+
+        .company-logo-wrap {
+            width: 64px;
+            height: 64px;
+            flex-basis: 64px;
         }
     }
     """
@@ -1163,6 +1214,8 @@ def validate_content(content: object) -> dict[str, object]:
     for index, item in enumerate(validate_object_list(data.get("experience"), "experience")):
         for field in ("role", "company", "period", "location", "client", "overview"):
             expect_string(item.get(field, ""), f"experience[{index}].{field}")
+        for field in ("logo_path", "logo_alt"):
+            expect_string(item.get(field, ""), f"experience[{index}].{field}")
         validate_string_list(item.get("highlights"), f"experience[{index}].highlights")
 
     for index, item in enumerate(validate_object_list(data.get("education"), "education")):
@@ -1315,14 +1368,27 @@ def render_experience(items: list[dict[str, object]]) -> str:
     for index, item in enumerate(items):
         client = item.get("client", "")
         client_part = f"Client: {client}" if client else ""
+        logo_block = ""
+        logo_path = item.get("logo_path", "")
+        if logo_path:
+            logo_alt = item.get("logo_alt") or f'{item["company"]} logo'
+            logo_block = (
+                f'<div class="company-logo-wrap">'
+                f'<img class="company-logo" src="{escape(logo_path)}" '
+                f'alt="{escape(logo_alt)}" loading="lazy" />'
+                f"</div>"
+            )
         cards.append(
             f"""
             <article class="card reveal" data-tone="{tones[index % len(tones)]}">
                 <div class="card-body">
-                    <div class="card-header">
-                        <p class="eyebrow">{escape(item["company"])}</p>
-                        <h3>{escape(item["role"])}</h3>
-                        {render_meta_row([item["period"], item["location"], client_part])}
+                    <div class="card-header company-head">
+                        {logo_block}
+                        <div class="company-copy">
+                            <p class="eyebrow">{escape(item["company"])}</p>
+                            <h3>{escape(item["role"])}</h3>
+                            {render_meta_row([item["period"], item["location"], client_part])}
+                        </div>
                     </div>
                     <p class="experience-overview">{format_text(item["overview"])}</p>
                     {render_clean_list(item["highlights"])}
@@ -1643,10 +1709,16 @@ def export_static_site(
     index_file = output_dir / "index.html"
     styles_file = output_dir / "styles.css"
     nojekyll_file = output_dir / ".nojekyll"
+    source_assets_dir = ROOT / "assets"
+    target_assets_dir = output_dir / "assets"
 
     index_file.write_text(build_page(profile_name), encoding="utf-8")
     styles_file.write_text(STYLES, encoding="utf-8")
     nojekyll_file.write_text("", encoding="utf-8")
+
+    if source_assets_dir.exists() and source_assets_dir.resolve() != target_assets_dir.resolve():
+        shutil.copytree(source_assets_dir, target_assets_dir, dirs_exist_ok=True)
+
     return index_file, styles_file, nojekyll_file
 
 
@@ -1685,6 +1757,24 @@ class PortfolioHandler(BaseHTTPRequestHandler):
             if include_body:
                 self.wfile.write(styles)
             return
+
+        if parsed.path.startswith("/assets/"):
+            asset_path = (ROOT / parsed.path.lstrip("/")).resolve()
+            if asset_path.is_file() and asset_path.is_relative_to(ROOT):
+                payload = asset_path.read_bytes()
+                content_type, _ = mimetypes.guess_type(asset_path.name)
+                self.send_response(200)
+                self.send_header(
+                    "Content-Type",
+                    f"{content_type or 'application/octet-stream'}; charset=utf-8"
+                    if content_type == "image/svg+xml"
+                    else content_type or "application/octet-stream",
+                )
+                self.send_header("Content-Length", str(len(payload)))
+                self.end_headers()
+                if include_body:
+                    self.wfile.write(payload)
+                return
 
         if parsed.path == "/.nojekyll":
             self.send_response(200)

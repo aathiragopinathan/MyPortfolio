@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 64" role="img" aria-labelledby="title">
+  <title>New Leap Initiative</title>
+  <rect width="180" height="64" rx="16" fill="#ffffff" />
+  <rect x="18" y="14" width="36" height="36" rx="12" fill="#0f766e" />
+  <path d="M28 41V23h5l10 11V23h5v18h-5L33 30v11h-5z" fill="#ecfeff" />
+  <text
+    x="66"
+    y="29"
+    fill="#115e59"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="18"
+    font-weight="700"
+  >
+    New Leap
+  </text>
+  <text
+    x="66"
+    y="46"
+    fill="#78716c"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="10"
+    font-weight="700"
+    letter-spacing="2.3"
+  >
+    INITIATIVE
+  </text>
+</svg>

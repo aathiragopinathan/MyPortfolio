@@ -72,6 +72,8 @@
       "period": "Jan 2024 - Present",
       "location": "City, Country",
       "client": "",
+      "logo_path": "assets/logos/company.svg",
+      "logo_alt": "Company logo",
       "overview": "**Overview:** One-line role summary.",
       "highlights": [
         "**Highlight one:** Main contribution.",

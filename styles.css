@@ -647,6 +647,45 @@ footer p {
     gap: 16px;
 }
 
+.card-header.company-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.company-copy {
+    display: grid;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+}
+
+.company-logo-wrap {
+    width: 72px;
+    height: 72px;
+    flex: 0 0 72px;
+    display: grid;
+    place-items: center;
+    padding: 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.32);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+}
+
+:root[data-theme="dark"] .company-logo-wrap {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.company-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 40px;
+    object-fit: contain;
+}
+
 .meta-row {
     display: flex;
     flex-wrap: wrap;
@@ -915,11 +954,21 @@ footer p {
         flex-direction: column;
     }
 
+    .card-header.company-head {
+        align-items: center;
+    }
+
     .project-links {
         justify-content: flex-start;
     }
 
     .card-grid.three {
         grid-template-columns: 1fr;
+    }
+
+    .company-logo-wrap {
+        width: 64px;
+        height: 64px;
+        flex-basis: 64px;
     }
 }

@@ -36,6 +36,7 @@ python3 website.py build --profile automation-engineer
 Inside any profile file:
 
 - Update your profile, projects, skills, experience, education, certifications, volunteering, and contact details.
+- Add `logo_path` and `logo_alt` inside experience entries if you want company logos on work cards.
 - Use `**bold text**` inside any sentence if you want a keyword label to stand out.
 - Keep the JSON structure the same and only replace the values.
 
